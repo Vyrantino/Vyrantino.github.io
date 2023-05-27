@@ -25,7 +25,8 @@ import {
   Box, 
   Button, 
   Typography , 
-  List, 
+  List,
+  Container, 
 } from '@mui/material';
 import pokeball from './assets/pokeball.png'
 
@@ -173,8 +174,10 @@ function App() {
                   
                   <Box sx={{ display: 'inline-flex', flexDirection: 'column', m: 1 }} key={pokemon.Nombre} >
                     { pokemones.length === 1 && <Typography> Su pokemon es </Typography> }
-                        <img src= { pokeball }  width={24} height={24} />
-                        <Typography> { pokemon.Nombre } </Typography>
+                      <Container>
+                          <img src= { pokeball }  width={24} height={24} />
+                          <Typography> { pokemon.Nombre } </Typography>
+                      </Container>
                   </Box>
                 ) )
                 
