@@ -1,0 +1,16 @@
+name: GitHub Pages
+on:
+  push:
+    branches:
+      - main # Reemplaza con la rama correcta si es necesario
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: dist # Reemplaza con el nombre de la carpeta de construcción si es diferente
