@@ -172,7 +172,7 @@ function App() {
                
                 pokemones.map( ( pokemon ) =>(
                   
-                  <Box sx={{ display: 'inline-flex', flexDirection: 'column', m: 1 }} key={pokemon.Nombre} >
+                  <Box  key={pokemon.Nombre} >
                     { pokemones.length === 1 && <Typography> Su pokemon es </Typography> }
                       <Container>
                           <img src= { pokeball }  width={24} height={24} />
