@@ -62,7 +62,7 @@ export const Tipo1 = ( props ) => {
 
     return(
         <Dialog  onClose={ closeDialog } open = { open } >
-            <DialogTitle> Cual es el tipo Principal de su pokemon? </DialogTitle>
+            <DialogTitle> Cual es el tipo PRINCIPAL de su pokemon? </DialogTitle>
             <List>
                 {
                     ListaTipos.map( ( tipo ) =>(
@@ -89,7 +89,7 @@ export const Tipo2 = ( props  ) => {
     }
     return(
         <Dialog onClose={ closeDialog } open = { open } >
-             <DialogTitle> Cual es el tipo Secundario de su pokemon? </DialogTitle>
+             <DialogTitle> Cual es el tipo SECUNDARIO de su pokemon? </DialogTitle>
             <List>
             {
                 ListaTipos2.map( ( tipo ) =>(
@@ -462,14 +462,14 @@ export const Brazos = ( props ) => {
                     closeDialog()
                 } } >
                     <img src='/src/assets/pokeball.svg' width={24} height={24} />
-                    <ListItemText> Ninguno </ListItemText>
+                    <ListItemText> No tiene Brazos </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Brazos', 2 ) ;
                     closeDialog()
                 } } >
                     <img src='/src/assets/pokeball.svg' width={24} height={24} />
-                    <ListItemText> Ninguno </ListItemText>
+                    <ListItemText> Tiene 2 Brazos </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Brazos', 4 ) ;
@@ -498,28 +498,28 @@ export const Patas = ( props ) => {
                     closeDialog()
                 } } >
                     <img src='/src/assets/pokeball.svg' width={24} height={24} />
-                    <ListItemText> Ninguno </ListItemText>
+                    <ListItemText> No tiene </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Patas', 2 ) ;
                     closeDialog()
                 } } >
                     <img src='/src/assets/pokeball.svg' width={24} height={24} />
-                    <ListItemText> Ninguno </ListItemText>
+                    <ListItemText> Tiene 2 </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Patas', 4 ) ;
                     closeDialog()
                 } } >
                     <img src='/src/assets/pokeball.svg' width={24} height={24} />
-                    <ListItemText> Mas de dos </ListItemText>
+                    <ListItemText> Tiene 4 </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Patas', 16 ) ;
                     closeDialog()
                 } } >
                     <img src='/src/assets/pokeball.svg' width={24} height={24} />
-                    <ListItemText> Mas de dos </ListItemText>
+                    <ListItemText> Muchas mas!  </ListItemText>
                 </ListItemButton>
             </List>
         </Dialog>  
@@ -561,10 +561,10 @@ export const Descartar = ( props ) => {
     }
     return(
         <Dialog onClose={ closeDialog }  open = { open } >
-             <DialogTitle> Su pokemon es { props.pokemon.name } ? </DialogTitle>
+             <DialogTitle> Su pokemon es { props.pokemon } ? </DialogTitle>
              <List>
                 <ListItemButton onClick={ () => {
-                    props.respuesta( 'Nombre', props.pokemon.name ) ;
+                    props.respuesta( props.pokemon ) ;
                     closeDialog()
                 } } >
                     <img src='/src/assets/pokeball.svg' width={24} height={24} />
@@ -572,7 +572,7 @@ export const Descartar = ( props ) => {
                 </ListItemButton>
 
                 <ListItemButton onClick={ () => {
-                    props.descartar( 'Nombre', props.pokemon.name ) ;
+                    props.descartar( props.pokemon ) ;
                     closeDialog()
                 } } >
                     <img src='/src/assets/pokeball.svg' width={24} height={24} />

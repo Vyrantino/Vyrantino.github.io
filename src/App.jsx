@@ -18,7 +18,8 @@ import{
   Mamifero,
   Canino,
   Felino,
-  Pico 
+  Pico, 
+  Descartar
 } from './preguntas';
 import { 
   Box, 
@@ -36,14 +37,31 @@ function App() {
   const [ pokemones, setPokemones ] = useState([]) ;
   const [pregunta, setPregunta] = React.useState(null);
   const [preguntasUtilizadas, setPreguntasUtilizadas] = React.useState([]);
+  const [ preguntaEspecifica , setPreguntaEspecifica ] = React.useState( null );
+  const [ tipoPregunta , setTipoPregunta ] = React.useState( false ) ;
 
   const handleOption = ( propiedad , tipo ) =>{
     aplicarFiltro( propiedad , tipo ) ;
   }
 
+  const obtenerPreguntaEspecifica = () =>{
+
+      const pokemon = pokemones[0].Nombre ;
+      setTipoPregunta( true ) ;
+      setPreguntaEspecifica(            
+          <Descartar 
+              pokemon = { pokemon }
+              respuesta = { respuesta }
+              descartar = { descartar }
+          /> 
+      ) ;
+      
+  }
 
 
   const obtenerPreguntaAleatoria = () => {
+      console.log( pokemones.length ) ;
+      setTipoPregunta( false );
       const preguntas = [
           <Tipo1 handleOption={handleOption}  />,
           <Tipo2 handleOption={handleOption}  />,
@@ -61,6 +79,7 @@ function App() {
           <Canino handleOption={handleOption}   />,
           <Felino handleOption={handleOption}   />,
           <Pico handleOption={handleOption}   />,
+         
         ];
 
         const preguntasDisponibles = preguntas.filter((_, index) => !preguntasUtilizadas.includes(index));
@@ -83,6 +102,7 @@ function App() {
       const handleReiniciar = () =>{
         setPokemones( Pokemones );
         setPreguntasUtilizadas( [] );
+        setPregunta([]) ;
       }
 
 
@@ -114,19 +134,37 @@ function App() {
     return listaFiltrada ;
   }
 
-
+  const respuesta =  (  valor ) =>{
+    const Respuesta = pokemones.filter( pokemon => pokemon.Nombre === valor ) ;
+    console.log( Respuesta ) ;
+    setPokemones(  Respuesta  ) ;
+    setPreguntaEspecifica( [] ) ;
+  }
+  const descartar = ( valor ) =>{
+    const Descarte = pokemones.filter( pokemon => pokemon.Nombre !== valor ) ;
+    setPokemones(  Descarte  ) ;
+    setPreguntaEspecifica( [] ) ;
+  }
 
   return (
   
       <Box  >
           
           <Button onClick={
-              obtenerPreguntaAleatoria 
+              pokemones.length >= 8 ?
+              obtenerPreguntaAleatoria
+              :
+              obtenerPreguntaEspecifica 
             }
           >
             pregunta
           </Button>
-            { pregunta }
+            { 
+              tipoPregunta ? 
+              preguntaEspecifica
+              :
+              pregunta
+            }
           <List>
              {
                
