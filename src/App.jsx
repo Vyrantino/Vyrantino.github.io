@@ -28,6 +28,7 @@ import {
   List, 
 } from '@mui/material';
 
+import pkball from '../public/pokeball.svg'
 function App() {
   React.useEffect( () =>{
     setPokemones( Pokemones ) ;
@@ -172,7 +173,7 @@ function App() {
                   
                   <Box key={pokemon.Nombre} >
                     { pokemones.length === 1 && <Typography> Su pokemon es </Typography> }
-                        <img src='/src/assets/pokeball.svg' width={24} height={24} />
+                        <img src= '/assets/pokeball.svg' width={24} height={24} />
                         <Typography> { pokemon.Nombre } </Typography>
                   </Box>
                 ) )
