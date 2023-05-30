@@ -26,27 +26,26 @@ import {
   Button, 
   Typography , 
   List,
-  Container,
-  IconButton,
   ListItemButton,
   ListItemIcon,
-  ListItemText, 
+  ListItemText,
+  DialogTitle,
+  Dialog, 
 } from '@mui/material';
-import pokeball from './assets/pokeball.png'
-import axios from 'axios';
 
 function App() {
   React.useEffect( () =>{
     setPokemones( Pokemones ) ;
     setPreguntasUtilizadas([]) ;
+    
   }, [] )
-  
+
   const [ pokemones, setPokemones ] = useState([]) ;
   const [pregunta, setPregunta] = React.useState(null);
   const [preguntasUtilizadas, setPreguntasUtilizadas] = React.useState([]);
   const [ preguntaEspecifica , setPreguntaEspecifica ] = React.useState( null );
   const [ tipoPregunta , setTipoPregunta ] = React.useState( false ) ;
-
+  const [ open , setOpen ] = React.useState( false ) ; 
   const handleOption = ( propiedad , tipo ) =>{
     aplicarFiltro( propiedad , tipo ) ;
   }
@@ -66,8 +65,10 @@ function App() {
   }
 
 
+
+
   const obtenerPreguntaAleatoria = () => {
-      console.log( pokemones.length ) ;
+      
       setTipoPregunta( false );
       const preguntas = [
           <Tipo1 handleOption={handleOption}  />,
@@ -110,6 +111,7 @@ function App() {
         setPokemones( Pokemones );
         setPreguntasUtilizadas( [] );
         setPregunta([]) ;
+        setOpen( false ) ;
       }
 
 
@@ -136,8 +138,14 @@ function App() {
       }
       return true;
     });
+
+    
+    if (listaFiltrada.length === 0) {
+      setOpen(true);
+    }
     
     setPokemones( listaFiltrada );
+     
     return listaFiltrada ;
   }
 
@@ -153,22 +161,14 @@ function App() {
     setPreguntaEspecifica( [] ) ;
   }
 
-  const getPokemonCry = async () =>{
-    console.log( 'a' ) ;
-    await axios.post( 'https://api.pkmnapi.com/v1/access_tokens' , {
-        type: 'access_tokens' , 
-        attributes: { email_address: 'gnc_000@hotmail.com' }
 
-    } , true )
-      .then( ( response ) => console.log( response )  ) 
-      
-  }
 
   return (
   
       <Box  >
           
           <Button 
+              disabled = { pokemones.length === 1 }
               variant='contained'
               onClick={
               pokemones.length >= 8 ?
@@ -193,10 +193,21 @@ function App() {
                   <Box key={pokemon.Nombre} >
                     { pokemones.length === 1 && <Typography> Su pokemon es </Typography> }
                       <ListItemButton  
-                        onClick={  getPokemonCry }
+                        
                         sx = {{width: "100px", height: "100px" , m: 1  }}
                       >
-                          <ListItemIcon   sx = {{ backgroundPosition: pokemon.posicion}} className = "ListaPokemon" >
+                          <ListItemIcon   
+                            sx = {{  
+                              backgroundPosition: pokemon.posicion , 
+                              "&:hover": {
+                                backgroundPosition: pokemon.hover ,
+                                
+                              },
+                            }} 
+                            className = "ListaPokemon" 
+                            onClick={ () => {} }
+                          > 
+                          
                             
                           </ListItemIcon>
                           
@@ -207,7 +218,14 @@ function App() {
                 
              }
           </List>
-          <Button variant= 'contained' onClick={ handleReiniciar } > Reiniciar </Button>
+          <Button variant= 'contained' onClick={ handleReiniciar } > Reiniciar</Button>
+
+            <Dialog  open = { open } >
+              <DialogTitle> Ha ingresado algun dato incorrecto, <br /> reinicie porfi uwu </DialogTitle>
+              <Button onClick={ handleReiniciar }  variant = 'contained' > Reiniciar  </Button>
+            </Dialog>
+
+          
       </Box>
   )
 }
