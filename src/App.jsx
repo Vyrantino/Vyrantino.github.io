@@ -26,9 +26,14 @@ import {
   Button, 
   Typography , 
   List,
-  Container, 
+  Container,
+  IconButton,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText, 
 } from '@mui/material';
 import pokeball from './assets/pokeball.png'
+import axios from 'axios';
 
 function App() {
   React.useEffect( () =>{
@@ -148,11 +153,24 @@ function App() {
     setPreguntaEspecifica( [] ) ;
   }
 
+  const getPokemonCry = async () =>{
+    console.log( 'a' ) ;
+    await axios.post( 'https://api.pkmnapi.com/v1/access_tokens' , {
+        type: 'access_tokens' , 
+        attributes: { email_address: 'gnc_000@hotmail.com' }
+
+    } , true )
+      .then( ( response ) => console.log( response )  ) 
+      
+  }
+
   return (
   
       <Box  >
           
-          <Button onClick={
+          <Button 
+              variant='contained'
+              onClick={
               pokemones.length >= 8 ?
               obtenerPreguntaAleatoria
               :
@@ -174,16 +192,22 @@ function App() {
                   
                   <Box key={pokemon.Nombre} >
                     { pokemones.length === 1 && <Typography> Su pokemon es </Typography> }
-                      <Container sx = {{width: "100px", height: "100px"}}>
-                      <Box  sx = {{backgroundPosition: pokemon.posicion}} className = "ListaPokemon" />
-                          <Typography> { pokemon.Nombre } </Typography>
-                      </Container>
+                      <ListItemButton  
+                        onClick={  getPokemonCry }
+                        sx = {{width: "100px", height: "100px" , m: 1  }}
+                      >
+                          <ListItemIcon   sx = {{ backgroundPosition: pokemon.posicion}} className = "ListaPokemon" >
+                            
+                          </ListItemIcon>
+                          
+                      </ListItemButton>
+                      <ListItemText sx={{ m: '10px' }} primary= { pokemon.Nombre } className='PokemonNames' />  
                   </Box>
                 ) )
                 
              }
           </List>
-          <Button onClick={ handleReiniciar } > Reiniciar </Button>
+          <Button variant= 'contained' onClick={ handleReiniciar } > Reiniciar </Button>
       </Box>
   )
 }
