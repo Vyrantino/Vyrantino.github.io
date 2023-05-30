@@ -11,6 +11,7 @@
     const t = true ; 
 
     const Pokemon1 = {
+        posicion: "right -621px bottom -2070px", 
         Nombre: "Bulbasaur",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -31,6 +32,7 @@
         
     }
     const Pokemon2 = {
+        posicion: "right -483px bottom -2070px", 
         Nombre: "Ivysaur",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -51,6 +53,7 @@
 
     }
     const Pokemon3 = {
+        posicion: "right -345px bottom -2070px",
         Nombre: "Venasaur",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -71,6 +74,7 @@
 
     }
     const Pokemon4 = {
+        posicion: "right -207px bottom -2070px",
         Nombre: "Charmander",
         Tipo1: "Fuego" , 
         Tipo2: "none",
@@ -91,6 +95,7 @@
 
     }
     const Pokemon5 = {
+        posicion: "right -69px bottom -2070px",
         Nombre: "Charmeleon",
         Tipo1: "Fuego" , 
         Tipo2: "none",
@@ -111,6 +116,7 @@
 
     }
     const Pokemon6 = {
+        posicion: "right -621px bottom -2001px",
         Nombre: "Charizard",
         Tipo1: "Fuego" , 
         Tipo2: "Volador",
@@ -131,6 +137,7 @@
 
     }
     const Pokemon7 = {
+        posicion: "right -483px bottom -2001px",
         Nombre: "Squirtle",
         Tipo1: "Agua" , 
         Tipo2: "none",
@@ -151,6 +158,7 @@
 
     }
     const Pokemon8 = {
+        posicion: "right -345px bottom -2001px",
         Nombre: "Wartortle",
         Tipo1: "Agua" , 
         Tipo2: "none",
@@ -171,6 +179,7 @@
 
     }
     const Pokemon9 = {
+        posicion: "right -207px bottom -2001px",
         Nombre: "Blastoise",
         Tipo1: "Agua" , 
         Tipo2: "none",
@@ -191,6 +200,7 @@
 
     }
     const Pokemon10 = {
+        posicion: "right -69px bottom -2001px",
         Nombre: "Caterpie",
         Tipo1: "Insecto" , 
         Tipo2: "none",
@@ -211,6 +221,7 @@
 
     }
     const Pokemon11 = {
+        posicion: "right -621px bottom -1932px",
         Nombre: "Metapod",
         Tipo1: "Insecto" , 
         Tipo2: "none",
@@ -231,6 +242,7 @@
 
     }
     const Pokemon12 = {
+        posicion: "right -483px bottom -1932px",
         Nombre: "Buterfree",
         Tipo1: "Insecto" , 
         Tipo2: "none",
@@ -251,6 +263,7 @@
 
     }
     const Pokemon13 = {
+        posicion: "right -345px bottom -1932px",
         Nombre: "Weedle",
         Tipo1: "Insecto" , 
         Tipo2: "Veneno",
@@ -271,6 +284,7 @@
 
     }
     const Pokemon14 = {
+        posicion: "right -207px bottom -1932px",
         Nombre: "Kakuna",
         Tipo1: "Insecto" , 
         Tipo2: "Veneno",
@@ -291,6 +305,7 @@
 
     }
     const Pokemon15 = {
+        posicion: "right -69px bottom -1932px",
         Nombre: "Beedrill",
         Tipo1: "Insecto" , 
         Tipo2: "Veneno",
@@ -311,6 +326,7 @@
 
     }
     const Pokemon16 = {
+        posicion: "right -621px bottom -1863px",
         Nombre: "Pidgey",
         Tipo1: "Volador" , 
         Tipo2: "Normal",
@@ -331,6 +347,7 @@
 
     }
     const Pokemon17 = {
+        posicion: "right -483px bottom -1863px",
         Nombre: "Pidgeotto",
         Tipo1: "Volador" , 
         Tipo2: "Normal",
@@ -352,6 +369,7 @@
 
     }
     const Pokemon18 = {
+        posicion: "right -345px bottom -1863px",
         Nombre: "Pidgeot",
         Tipo1: "Volador" , 
         Tipo2: "Normal",
@@ -373,6 +391,7 @@
 
     }
     const Pokemon19 = {
+        posicion: "right -207px bottom -1863px",
         Nombre: "Rattata",
         Tipo1: "Normal" , 
         Tipo2: "none",
@@ -393,6 +412,7 @@
 
     }
     const Pokemon20 = {
+        posicion: "right -69px bottom -1863px",
         Nombre: "Raticate",
         Tipo1: "Normal" , 
         Tipo2: "none",
@@ -413,6 +433,7 @@
 
     }
     const Pokemon21 = {
+        posicion: "right -621px bottom -1794px",
         Nombre: "Spearow",
         Tipo1: "Volador" , 
         Tipo2: "Normal",
@@ -434,6 +455,7 @@
 
     }
     const Pokemon22 = {
+        posicion: "right -483px bottom -1794px",
         Nombre: "Fearow",
         Tipo1: "Volador" , 
         Tipo2: "Normal",
@@ -454,6 +476,7 @@
 
     }
     const Pokemon23 = {
+        posicion: "right -345px bottom -1794px",
         Nombre: "Ekans",
         Tipo1: "Veneno" , 
         Tipo2: "none",
@@ -474,6 +497,7 @@
 
     }
     const Pokemon24 = {
+        posicion: "right -207px bottom -1794px",
         Nombre: "Arbok",
         Tipo1: "Veneno" , 
         Tipo2: "none",
@@ -494,6 +518,7 @@
 
     }
     const Pokemon25 = {
+        posicion: "right -69px bottom -1794px",
         Nombre: "Pikachu",
         Tipo1: "Electrico" , 
         Tipo2: "none",
@@ -514,6 +539,7 @@
 
     }
     const Pokemon26 = {
+        posicion: "right -621px bottom -1725px",
         Nombre: "Raichu",
         Tipo1: "Electrico" , 
         Tipo2: "none",
@@ -534,6 +560,7 @@
 
     }
     const Pokemon27 = {
+        posicion: "right -483px bottom -1725px",
         Nombre: "Sandsdrew",
         Tipo1: "Tierra" , 
         Tipo2: "none",
@@ -554,6 +581,7 @@
 
     }
     const Pokemon28 = {
+        posicion: "right -345px bottom -1725px",
         Nombre: "Sandslash",
         Tipo1: "Tierra" , 
         Tipo2: "none",
@@ -574,6 +602,7 @@
 
     }
     const Pokemon29 = {
+        posicion: "right -207px bottom -1725px",
         Nombre: "Niddoran♀",
         Tipo1: "Veneno" , 
         Tipo2: "none",
@@ -594,6 +623,7 @@
 
     }
     const Pokemon30 = {
+        posicion: "right -69px bottom -1725px",
         Nombre: "Niddorina",
         Tipo1: "Veneno" , 
         Tipo2: "none",
@@ -614,6 +644,7 @@
 
     }
     const Pokemon31 = {
+        posicion: "right -621px bottom -1656px",
         Nombre: "Nidoqueen",
         Tipo1: "Veneno" , 
         Tipo2: "none",
@@ -634,6 +665,7 @@
 
     }
     const Pokemon32 = {
+        posicion: "right -483px bottom -1656px",
         Nombre: "Niddoran♂",
         Tipo1: "Veneno" , 
         Tipo2: "none",
@@ -654,6 +686,7 @@
 
     }
     const Pokemon33 = {
+        posicion: "right -345px bottom -1656px",
         Nombre: "Niddorino",
         Tipo1: "Veneno" , 
         Tipo2: "none",
@@ -674,6 +707,7 @@
 
     }
     const Pokemon34 = {
+        posicion: "right -207px bottom -1656px",
         Nombre: "Nidoking",
         Tipo1: "Veneno" , 
         Tipo2: "none",
@@ -694,6 +728,7 @@
 
     }
     const Pokemon35 = {
+        posicion: "right -69px bottom -1656px",
         Nombre: "Clefairy",
         Tipo1: "Hada" , 
         Tipo2: "none",
@@ -714,6 +749,7 @@
 
     }
     const Pokemon36 = {
+        posicion: "right -621px bottom -1587px",
         Nombre: "Clefable",
         Tipo1: "Hada" , 
         Tipo2: "none",
@@ -734,6 +770,7 @@
 
     }
     const Pokemon37 = {
+        posicion: "right -483px bottom -1587px",
         Nombre: "Vulpix",
         Tipo1: "Fuego" , 
         Tipo2: "none",
@@ -754,6 +791,7 @@
 
     }
     const Pokemon38 = {
+        posicion: "right -345px bottom -1587px",
         Nombre: "Ninetales",
         Tipo1: "Fuego" , 
         Tipo2: "none",
@@ -774,6 +812,7 @@
 
     }
     const Pokemon39 = {
+        posicion: "right -207px bottom -1587px",
         Nombre: "Jigglypuff",
         Tipo1: "Normal" , 
         Tipo2: "Hada",
@@ -794,6 +833,7 @@
 
     }
     const Pokemon40 = {
+        posicion: "right -69px bottom -1587px",
         Nombre: "Wigglytuff",
         Tipo1: "Normal" , 
         Tipo2: "Hada",
@@ -815,6 +855,7 @@
 
     }
     const Pokemon41 = {
+        posicion: "right -621px bottom -1518px",
         Nombre: "Zubat",
         Tipo1: "Veneno" , 
         Tipo2: "Volador",
@@ -835,6 +876,7 @@
 
     }
     const Pokemon42 = {
+        posicion: "right -483px bottom -1518px",
         Nombre: "Goldbat",
         Tipo1: "Veneno" , 
         Tipo2: "Volador",
@@ -854,6 +896,7 @@
         Cola: f 
     }
     const Pokemon43 = {
+        posicion: "right -345px bottom -1518px",
         Nombre: "Oddish",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -874,6 +917,7 @@
 
     }
     const Pokemon44 = {
+        posicion: "right -207px bottom -1518px",
         Nombre: "Gloom",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -894,6 +938,7 @@
 
     }
     const Pokemon45 = {
+        posicion: "right -69px bottom -1518px",
         Nombre: "Vileplume",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -914,6 +959,7 @@
 
     }
     const Pokemon46 = {
+        posicion: "right -621px bottom -1449px",
         Nombre: "Paras",
         Tipo1: "Insecto" , 
         Tipo2: "Planta",
@@ -934,6 +980,7 @@
 
     }
     const Pokemon47 = {
+        posicion: "right -483px bottom -1449px",
         Nombre: "Parasect",
         Tipo1: "Insecto" , 
         Tipo2: "Planta",
@@ -954,6 +1001,7 @@
 
     }
     const Pokemon48 = {
+        posicion: "right -345px bottom -1449px",
         Nombre: "Venonat",
         Tipo1: "Insecto" , 
         Tipo2: "Veneno",
@@ -974,6 +1022,7 @@
 
     }
     const Pokemon49 = {
+        posicion: "right -207px bottom -1449px",
         Nombre: "Venomoth",
         Tipo1: "Insecto" , 
         Tipo2: "Veneno",
@@ -994,6 +1043,7 @@
 
     }
     const Pokemon50 = {
+        posicion: "right -69px bottom -1449px",
         Nombre: "Diglett",
         Tipo1: "Tierra" , 
         Tipo2: "none",
@@ -1014,6 +1064,7 @@
 
     }
     const Pokemon51 = {
+        posicion: "right -621px bottom -1380px",
         Nombre: "Dugtrio",
         Tipo1: "Tierra" , 
         Tipo2: "none",
@@ -1034,6 +1085,7 @@
 
     }
     const Pokemon52 = {
+        posicion: "right -483px bottom -1380px",
         Nombre: "Meowth",
         Tipo1: "Normal" , 
         Tipo2: "none",
@@ -1054,6 +1106,7 @@
 
     }
     const Pokemon53 = {
+        posicion: "right -345px bottom -1380px",
         Nombre: "Persian",
         Tipo1: "Normal" , 
         Tipo2: "none",
@@ -1074,6 +1127,7 @@
 
     }
     const Pokemon54 = {
+        posicion: "right -207px bottom -1380px",
         Nombre: "Psyduck",
         Tipo1: "Agua" , 
         Tipo2: "none",
@@ -1094,6 +1148,7 @@
 
     }
     const Pokemon55 = {
+        posicion: "right -69px bottom -1380px",
         Nombre: "Golduck",
         Tipo1: "Agua" , 
         Tipo2: "none",
@@ -1114,6 +1169,7 @@
 
     }
     const Pokemon56 = {
+        posicion: "right -621px bottom -1311px",
         Nombre: "Mankey",
         Tipo1: "Luchador" , 
         Tipo2: "none",
@@ -1134,6 +1190,7 @@
 
     }
     const Pokemon57 = {
+        posicion: "right -483px bottom -1311px",
         Nombre: "Primeape",
         Tipo1: "Luchador" , 
         Tipo2: "none",
@@ -1154,6 +1211,7 @@
 
     }
     const Pokemon58 = {
+        posicion: "right -345px bottom -1311px",
         Nombre: "Growlithe",
         Tipo1: "Fuego" , 
         Tipo2: "none",
@@ -1174,6 +1232,7 @@
 
     }
     const Pokemon59 = {
+        posicion: "right -207px bottom -1311px",
         Nombre: "Arcanine",
         Tipo1: "Fuego" , 
         Tipo2: "none",
@@ -1194,6 +1253,7 @@
 
     }
     const Pokemon60 = {
+        posicion: "right -69px bottom -1311px",
         Nombre: "Poliwag",
         Tipo1: "Agua" , 
         Tipo2: "none",
@@ -1215,6 +1275,7 @@
     }
 
     const Pokemon61 = {
+        posicion: "right -621px bottom -1242px",
         Nombre: "Poliwhirl",
          Tipo1: "Agua" , 
         Tipo2: "none",
@@ -1235,6 +1296,7 @@
 
     }
     const Pokemon62 = {
+        posicion: "right -483px bottom -1242px",
         Nombre: "Poliwrath",
         Tipo1: "Agua" , 
         Tipo2: "Luchador",
@@ -1255,6 +1317,7 @@
 
     }
     const Pokemon63 = {
+        posicion: "right -345px bottom -1242px",
         Nombre: "Abra",
         Tipo1: "Psiquico" , 
         Tipo2: "none",
@@ -1275,6 +1338,7 @@
 
     }
     const Pokemon64 = {
+        posicion: "right -207px bottom -1242px",
         Nombre: "Kadabra",
         Tipo1: "Psiquico" , 
         Tipo2: "none",
@@ -1295,6 +1359,7 @@
 
     }
     const Pokemon65 = {
+        posicion: "right -69px bottom -1242px",
         Nombre: "Alakazam",
         Tipo1: "Psiquico" , 
         Tipo2: "none",
@@ -1315,6 +1380,7 @@
 
     }
     const Pokemon66 = {
+        posicion: "right -621px bottom -1173px",
         Nombre: "Machop",
         Tipo1: "Luchador" , 
         Tipo2: "none",
@@ -1335,6 +1401,7 @@
 
     }
     const Pokemon67 = {
+        posicion: "right -483px bottom -1173px",
         Nombre: "Machoke",
         Tipo1: "Luchador" , 
         Tipo2: "none",
@@ -1355,6 +1422,7 @@
 
     }
     const Pokemon68 = {
+        posicion: "right -345px bottom -1173px",
         Nombre: "Machamp",
         Tipo1: "Luchador" , 
         Tipo2: "none",
@@ -1375,6 +1443,7 @@
 
     }
     const Pokemon69 = {
+        posicion: "right -207px bottom -1173px",
         Nombre: "Bellsprout",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -1395,6 +1464,7 @@
 
     }
     const Pokemon70 = {
+        posicion: "right -69px bottom -1173px",
         Nombre: "Weepinbell",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -1415,6 +1485,7 @@
 
     }
     const Pokemon71 = {
+        posicion: "right -621px bottom -1104px",
         Nombre: "Victreebell",
         Tipo1: "Planta" , 
         Tipo2: "Veneno",
@@ -1435,11 +1506,12 @@
 
     }
     const Pokemon72 = {
+        posicion: "right -483px bottom -1104px",
         Nombre: "Tentacool",
         Tipo1: "Agua" , 
         Tipo2: "Veneno",
         Patas: 0, 
-        Color: "Verde" ,
+        Color: "Azul" ,
         Brazos: 2 ,
         Colmillos: f,
         Vuela: false , 

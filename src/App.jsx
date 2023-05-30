@@ -167,15 +167,15 @@ function App() {
               :
               pregunta
             }
-          <List>
+          <List className="lista">
              {
                
                 pokemones.map( ( pokemon ) =>(
                   
-                  <Box  key={pokemon.Nombre} >
+                  <Box key={pokemon.Nombre} >
                     { pokemones.length === 1 && <Typography> Su pokemon es </Typography> }
-                      <Container>
-                          <img src= { pokeball }  width={24} height={24} />
+                      <Container sx = {{width: "100px", height: "100px"}}>
+                      <Box  sx = {{backgroundPosition: pokemon.posicion}} className = "ListaPokemon" />
                           <Typography> { pokemon.Nombre } </Typography>
                       </Container>
                   </Box>
