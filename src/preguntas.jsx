@@ -9,7 +9,7 @@ import {
     DialogTitle,
     Button
 } from '@mui/material';
-
+import pokeball from './pokeball.svg' ;
 
 const ListaTipos = [
     'Insecto',
@@ -53,6 +53,7 @@ export default function Preguntas( props ){
 }
 
 
+
 export const Tipo1 = ( props ) => {
     const [ open , setOpen ] = React.useState( true ) ;
     const closeDialog = () =>{
@@ -70,7 +71,7 @@ export const Tipo1 = ( props ) => {
                             props.handleOption( 'Tipo1', tipo ) ;
                             closeDialog() ;
                         } } >
-                            <img src='./assets/pokeball.svg' width={24} height={24} />
+                            <img src={ pokeball } width={24} height={24} />
                             <ListItemText> { tipo } </ListItemText>
                         </ListItemButton>
                     ) )
@@ -97,7 +98,7 @@ export const Tipo2 = ( props  ) => {
                         props.handleOption( 'Tipo2', tipo ) ;
                         closeDialog() ;
                     } } >
-                        <img src='./assets/pokeball.svg' width={24} height={24} />
+                       <img src={ pokeball } width={24} height={24} />
                         <ListItemText> { tipo } </ListItemText>
                     </ListItemButton>
                 ) )
@@ -123,7 +124,7 @@ export const Cola = ( props ) => {
                     closeDialog()
                     
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -131,7 +132,7 @@ export const Cola = ( props ) => {
                     props.handleOption( 'Cola', false ) ;
                     closeDialog()
                } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>            
@@ -154,7 +155,7 @@ export const Pico = ( props ) => {
                     props.handleOption( 'Pico', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -162,7 +163,7 @@ export const Pico = ( props ) => {
                     props.handleOption( 'Pico', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>
@@ -184,7 +185,7 @@ export const Felino = ( props ) => {
                     props.handleOption( 'Felino', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -192,7 +193,7 @@ export const Felino = ( props ) => {
                     props.handleOption( 'Felino', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>
@@ -214,7 +215,7 @@ export const Canino = ( props ) => {
                     props.handleOption( 'Canino', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -222,7 +223,7 @@ export const Canino = ( props ) => {
                     props.handleOption( 'Canino', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>
@@ -244,7 +245,7 @@ export const Mamifero = ( props ) => {
                     props.handleOption( 'Mamifero', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -252,7 +253,7 @@ export const Mamifero = ( props ) => {
                     props.handleOption( 'Mamifero', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>            
@@ -274,7 +275,7 @@ export const Roedor = ( props ) => {
                     props.handleOption( 'Roedor', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -282,7 +283,7 @@ export const Roedor = ( props ) => {
                     props.handleOption( 'Roedor', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>            
@@ -304,7 +305,7 @@ export const Reptil = ( props ) => {
                     props.handleOption( 'Reptil', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -312,7 +313,7 @@ export const Reptil = ( props ) => {
                     props.handleOption( 'Reptil', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>
@@ -334,7 +335,7 @@ export const Dinosaurio = ( props ) => {
                     props.handleOption( 'Dinosaurio', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -342,7 +343,7 @@ export const Dinosaurio = ( props ) => {
                     props.handleOption( 'Dinosaurio', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>            
@@ -364,7 +365,7 @@ export const Ash = ( props) => {
                     props.handleOption( 'Ash', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -372,7 +373,7 @@ export const Ash = ( props) => {
                     props.handleOption( 'Ash', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>   
 
@@ -380,7 +381,7 @@ export const Ash = ( props) => {
                     
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Sinceramente no se </ListItemText>
                 </ListItemButton>    
             </List>
@@ -402,7 +403,7 @@ export const Vuela = ( props ) => {
                     props.handleOption( 'Vuela', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -410,7 +411,7 @@ export const Vuela = ( props ) => {
                     props.handleOption( 'Vuela', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>
@@ -431,7 +432,7 @@ export const Colmillos = ( props ) => {
                     props.handleOption( 'Colmillos', true ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -439,7 +440,7 @@ export const Colmillos = ( props ) => {
                     props.handleOption( 'Colmillos', false ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>
@@ -461,21 +462,21 @@ export const Brazos = ( props ) => {
                     props.handleOption( 'Brazos', 0 ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> No tiene Brazos </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Brazos', 2 ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Tiene 2 Brazos </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Brazos', 4 ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Mas de dos </ListItemText>
                 </ListItemButton>
             </List>
@@ -497,28 +498,28 @@ export const Patas = ( props ) => {
                     props.handleOption( 'Patas', 0 ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> No tiene </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Patas', 2 ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Tiene 2 </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Patas', 4 ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Tiene 4 </ListItemText>
                 </ListItemButton>
                 <ListItemButton onClick={ () => {
                     props.handleOption( 'Patas', 16 ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Muchas mas!  </ListItemText>
                 </ListItemButton>
             </List>
@@ -541,7 +542,7 @@ export const Color = ( props ) => {
                         props.handleOption( 'Color', color ) ;
                         closeDialog()
                     } } >
-                        <img src='./assets/pokeball.svg' width={24} height={24} />
+                        <img src={ pokeball } width={24} height={24} />
                         <ListItemText> { color } </ListItemText>
                     </ListItemButton>
                 ) )
@@ -567,7 +568,7 @@ export const Descartar = ( props ) => {
                     props.respuesta( props.pokemon ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                    <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Si </ListItemText>
                 </ListItemButton>
 
@@ -575,7 +576,7 @@ export const Descartar = ( props ) => {
                     props.descartar( props.pokemon ) ;
                     closeDialog()
                 } } >
-                    <img src='./assets/pokeball.svg' width={24} height={24} />
+                     <img src={ pokeball } width={24} height={24} />
                     <ListItemText> Ño </ListItemText>
                 </ListItemButton>    
             </List>
