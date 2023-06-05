@@ -30,29 +30,37 @@ import {
   ListItemIcon,
   ListItemText,
   DialogTitle,
-  Dialog, 
+  Dialog,
+  ButtonGroup,
+  Snackbar,
+  Alert, 
 } from '@mui/material';
+import Sidebar from './sidebar';
 
 function App() {
   React.useEffect( () =>{
     setPokemones( Pokemones ) ;
+    setPokemonesPlayer2( Pokemones ) ;
     setPreguntasUtilizadas([]) ;
     
   }, [] )
 
-  const [ pokemones, setPokemones ] = useState([]) ;
+  const [ pokemones, setPokemones ] = React.useState([]) ;
+  const [ pokemonesPlayer2, setPokemonesPlayer2 ] = React.useState([]) ;
   const [pregunta, setPregunta] = React.useState(null);
   const [preguntasUtilizadas, setPreguntasUtilizadas] = React.useState([]);
   const [ preguntaEspecifica , setPreguntaEspecifica ] = React.useState( null );
   const [ tipoPregunta , setTipoPregunta ] = React.useState( false ) ;
   const [ open , setOpen ] = React.useState( false ) ; 
-  const handleOption = ( propiedad , tipo ) =>{
-    aplicarFiltro( propiedad , tipo ) ;
-  }
+  const [ openGame , setOpenGame ] = React.useState( true ) ; 
+  const [ pickedPokemon , setPickedPokemon ] = React.useState([]) ; 
+  const [ openSnackbar , setOpenSnackbar ] = React.useState( false ) ;
+  const [ winner , setWinner ] = React.useState(false) ;
+  const [ openDrawer , setOpenDrawer ] = React.useState( false ) ;
 
   const obtenerPreguntaEspecifica = () =>{
 
-      const pokemon = pokemones[0].Nombre ;
+      const pokemon = pokemones[ Math.floor( Math.random() * pokemones.length ) ].Nombre ;
       setTipoPregunta( true ) ;
       setPreguntaEspecifica(            
           <Descartar 
@@ -109,20 +117,30 @@ function App() {
 
       const handleReiniciar = () =>{
         setPokemones( Pokemones );
+        setPokemonesPlayer2( Pokemones );
         setPreguntasUtilizadas( [] );
         setPregunta([]) ;
         setOpen( false ) ;
+        setPickedPokemon( Pokemones[Math.floor( Math.random() * Pokemones.length ) ] ) ; 
       }
 
 
   let filtro = {} ;
 
   function aplicarFiltro(propiedad, valor) {
-    filtro[propiedad] = valor;
-    const resultadoFiltro = filtrarPokemon(filtro);
-    setPokemones( resultadoFiltro ) ;
-    console.log( resultadoFiltro ) ;
 
+    //if( pickedPokemon && pickedPokemon[ propiedad ] === valor ){
+      filtro[propiedad] = valor;
+      const resultadoFiltro = filtrarPokemon(filtro);
+      setPokemones( resultadoFiltro ) ;
+      console.log( resultadoFiltro ) ;
+  //  }
+   //else if( pickedPokemon && pickedPokemon[ propiedad ] === false ){
+      // filtro[propiedad] = !valor;
+      // const resultadoFiltro = filtrarPokemon(filtro);
+      // setPokemones( resultadoFiltro ) ;
+      // console.log( resultadoFiltro ) ;
+  // }
   }
 
   function reiniciarFiltro() {
@@ -150,81 +168,228 @@ function App() {
   }
 
   const respuesta =  (  valor ) =>{
-    const Respuesta = pokemones.filter( pokemon => pokemon.Nombre === valor ) ;
-    console.log( Respuesta ) ;
-    setPokemones(  Respuesta  ) ;
-    setPreguntaEspecifica( [] ) ;
+    //if( pickedPokemon.Nombre === valor ){
+      const Respuesta = pokemones.filter( pokemon => pokemon.Nombre === valor ) ;
+      console.log( Respuesta ) ;
+      setPokemones(  Respuesta  ) ;
+      setPreguntaEspecifica( [] ) ;
+    //}
   }
   const descartar = ( valor ) =>{
-    const Descarte = pokemones.filter( pokemon => pokemon.Nombre !== valor ) ;
-    setPokemones(  Descarte  ) ;
-    setPreguntaEspecifica( [] ) ;
+      const Descarte = pokemones.filter( pokemon => pokemon.Nombre !== valor ) ;
+      setPokemones(  Descarte  ) ;
+      setPreguntaEspecifica( [] ) ;
   }
 
+  const respuestaJugador =  (  valor ) =>{
+    //if( pickedPokemon.Nombre === valor ){
+      const Respuesta = pokemones.filter( pokemon => pokemon.Nombre === valor ) ;
+      console.log( Respuesta ) ;
+      setPokemones(  Respuesta  ) ;
+      setPreguntaEspecifica( [] ) ;
+    //}
+  }
+  const descartarJugador = ( valor ) =>{
+      const Descarte = pokemones.filter( pokemon => pokemon.Nombre !== valor ) ;
+      setPokemones(  Descarte  ) ;
+      setPreguntaEspecifica( [] ) ;
+  }
 
+  const handleComenzarJuego = () =>{
+    setOpenGame( false ) ;
+    setPickedPokemon( Pokemones[Math.floor( Math.random() * Pokemones.length ) ] ) ; 
+    console.log( pickedPokemon ) ;
+  }
+
+  const handleRespuestaJugador = ( nombre ) => {
+
+    if( nombre === pickedPokemon.Nombre ){
+       const result = pokemonesPlayer2.filter( ( pokemon ) => pokemon.Nombre ===  nombre );
+       setPokemonesPlayer2( result ) ;
+    }
+    else{
+      setOpenSnackbar( true );
+
+    }
+
+  }
+
+  
+  const handleCloseSnackbar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenSnackbar(false);
+    obtenerPreguntaAleatoria() ;
+  };
+
+  
+  const handleOption = ( propiedad , tipo ) =>{
+    aplicarFiltro( propiedad , tipo ) ;
+  }
+
+  const handleOpenDrawer = () =>{
+    setOpenDrawer( true ) ;
+
+  }
+
+  
+  const toggleDrawer = (  )  => {
+
+    setOpenDrawer( false );
+  };
 
   return (
   
       <Box  >
-          
-          <Button 
-              disabled = { pokemones.length === 1 }
-              variant='contained'
-              onClick={
-              pokemones.length >= 8 ?
-              obtenerPreguntaAleatoria
-              :
-              obtenerPreguntaEspecifica 
-            }
-          >
-            pregunta
-          </Button>
-            { 
-              tipoPregunta ? 
-              preguntaEspecifica
-              :
-              pregunta
-            }
-          <List className="lista">
-             {
-               
-                pokemones.map( ( pokemon ) =>(
-                  
-                  <Box key={pokemon.Nombre} >
-                    { pokemones.length === 1 && <Typography> Su pokemon es </Typography> }
-                      <ListItemButton  
+        <Sidebar 
+            openDrawer = { openDrawer }
+            closeDrawer = { toggleDrawer }
+            pokemonesPlayer2 = { pokemonesPlayer2 }
+            setPokemonesPlayer2 = { setPokemonesPlayer2 }
+            pickedPokemon = { pickedPokemon }
+        />
+        
+
+
+        <Snackbar open = { openSnackbar } autoHideDuration={3000} onClose={ handleCloseSnackbar } anchorOrigin= { { vertical: 'top' , horizontal: 'center' } }  >
+            <Alert  severity="warning" sx={{ width: '100%' }}  >
+              Intenta con otra propiedad! 
+            </Alert>
+        </Snackbar> 
+
+        <Dialog  open = { openGame } >
+          <DialogTitle>  Iniciar Juego  </DialogTitle>
+          <Button onClick={  handleComenzarJuego }  variant = 'contained' > Comenzar Juego  </Button>
+        </Dialog>
+
+     
+
+            <Button variant= 'contained' color='secondary' onClick={ handleReiniciar } > Reiniciar</Button>
+
+        
+
+        <Box sx={ { display: 'flex'   } } >
+            <Box flex={ 1 } >
+              <Button variant='contained' > PC </Button>
+              <Button 
+                  disabled = { pokemones.length === 1 }
+                  variant='contained'
+                  onClick={
+                  pokemones.length >= 8 ?
+                  obtenerPreguntaAleatoria
+                  :
+                  obtenerPreguntaEspecifica 
+                }
+              >
+                pregunta
+              </Button>
+                { 
+                  tipoPregunta ? 
+                  preguntaEspecifica
+                  :
+                  pregunta
+                }
+              <List  className="lista">
+                  {
+                    
+                      pokemones.map( ( pokemon ) =>(
                         
-                        sx = {{width: "100px", height: "100px" , m: 1  }}
-                      >
-                          <ListItemIcon   
-                            sx = {{  
-                              backgroundPosition: pokemon.posicion , 
-                              "&:hover": {
-                                backgroundPosition: pokemon.hover ,
+                        <Box  key={pokemon.Nombre} >
+                          { pokemones.length === 1 && <Typography> Mi pokemon es </Typography> }
+                            <ListItemButton  
+                              onClick={ () => {} }
+                              sx = {{width: "100px", height: "100px" , m: 1  }}
+                            >
+                                <ListItemIcon   
+                                  sx = {{  
+                                    backgroundPosition: pokemon.posicion , 
+                                    "&:hover": {
+                                      backgroundPosition: pokemon.hover ,
+                                      
+                                    },
+                                  }} 
+                                  className = "ListaPokemon" 
+                                  onClick={ () => {} }
+                                > 
                                 
-                              },
-                            }} 
-                            className = "ListaPokemon" 
-                            onClick={ () => {} }
-                          > 
-                          
-                            
-                          </ListItemIcon>
-                          
-                      </ListItemButton>
-                      <ListItemText sx={{ m: '10px' }} primary= { pokemon.Nombre } className='PokemonNames' />  
-                  </Box>
-                ) )
-                
-             }
-          </List>
-          <Button variant= 'contained' onClick={ handleReiniciar } > Reiniciar</Button>
+                                  
+                                </ListItemIcon>
+                                
+                            </ListItemButton>
+                            <ListItemText  sx={{ m: '10px' , color: 'white' }} primary= { pokemon.Nombre } className='PokemonNames' />  
+                        </Box>
+                      ) )
+                      
+                  }
+                </List>
+            </Box>
+
+            <Box flex={ 1 } >
+              <Button variant='contained' color='error' onClick={ () => console.log( pickedPokemon )  } > Jugador </Button>
+              <Button variant='contained'  color='info' onClick = { handleOpenDrawer } >  Pregunta </Button>
+              <List className="lista">
+                  {
+                    
+                      pokemonesPlayer2.map( ( pokemon ) =>(
+                        
+                        <Box  key={pokemon.Nombre} >
+                          { pokemonesPlayer2.length === 1 && <Typography> Su pokemon es </Typography> }
+                            <ListItemButton  
+                              onClick={ () => handleRespuestaJugador( pokemon.Nombre )   }
+                              sx = {{width: "100px", height: "100px" , m: 1  }}
+                            >
+                                <ListItemIcon   
+                                  sx = {{  
+                                    backgroundPosition: pokemon.posicion , 
+                                    "&:hover": {
+                                      backgroundPosition: pokemon.hover ,
+                                      
+                                    },
+                                  }} 
+                                  className = "ListaPokemon" 
+                                  onClick={ () => {} }
+                                > 
+                                
+                                  
+                                </ListItemIcon>
+                                
+                            </ListItemButton>
+                            <ListItemText  sx={{ m: '10px' , color: 'white' }} primary= { pokemon.Nombre } className='PokemonNames' />  
+                        </Box>
+                      ) )
+                      
+                  }
+                </List>
+            </Box>
+           
+
+        </Box>
+          
 
             <Dialog  open = { open } >
               <DialogTitle> Ha ingresado algun dato incorrecto, <br /> reinicie porfi uwu </DialogTitle>
               <Button onClick={ handleReiniciar }  variant = 'contained' > Reiniciar  </Button>
             </Dialog>
-
+            
+          {
+              pokemones.length === 1 &&
+              <Dialog open={ true } >
+                  <DialogTitle> Felicidades! </DialogTitle>
+                  <Button variant='contained' color='error'  > La PC ha adivinado <br />  su pokemon primero! </Button>
+                  <Button onClick={ handleReiniciar }  variant = 'contained' > Reiniciar  </Button>
+              </Dialog>
+          }
+          
+          {
+              pokemonesPlayer2.length === 1 &&
+              <Dialog open={ true } >
+                  <DialogTitle> Felicidades! </DialogTitle>
+                  <Button variant='contained' color='warning'  > Ha Adivinado el pokemon de la PC! </Button>
+                  <Button onClick={ handleReiniciar }  variant = 'contained' > Reiniciar  </Button>
+              </Dialog>
+          }
           
       </Box>
   )
