@@ -376,7 +376,7 @@ function App() {
           {
               pokemones.length === 1 &&
               <Dialog open={ true } >
-                  <DialogTitle> Felicidades! </DialogTitle>
+                  <DialogTitle> Felicidades! *A la PC </DialogTitle>
                   <Button variant='contained' color='error'  > La PC ha adivinado <br />  su pokemon primero! </Button>
                   <Button onClick={ handleReiniciar }  variant = 'contained' > Reiniciar  </Button>
               </Dialog>
